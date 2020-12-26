@@ -25,6 +25,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('front.contact')}}">Contact Us</a>
                     </li>
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    </li>
+                    @endguest
+
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('dashboard.')}}">Dashboard</a>
+                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('logout')}}">Log Out</a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>

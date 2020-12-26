@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
     public function showHome(){
-        return view('front.home');
+        $posts = Post::paginate(12);
+        return view('front.home')->with('posts',$posts);
 
     }
 
